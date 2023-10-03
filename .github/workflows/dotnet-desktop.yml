@@ -24,9 +24,9 @@ jobs:
     - name: Build Project
       run: |
         # Build the project
-        & "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild.exe" "RacketUiPaint.sln" /p:PublishSingleFile=true /p:PublishTrimmed=true /p:IncludeNativeLibrariesForSelfExtract=true 
+        & "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild.exe" "RacketUiPaint.sln" /p:Configuration=Release /p:PublishSingleFile=true /p:PublishTrimmed=true /p:IncludeNativeLibrariesForSelfExtract=true 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
         name: compiled app
-        path: .\RacketUiPaint\bin\Release
+        path: .\RacketUiPaint\bin\Release\RacketUiPaint.exe

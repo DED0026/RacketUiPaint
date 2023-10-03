@@ -34,9 +34,6 @@ namespace RacketUiPaint
         string pointformula = " (make-posn x y)";
         string textformula = "(define newran(overlay/xy (text \" string\" size color) x y oldran))";
         string oldrandomstring = "base";
-        string onebackoldran;
-        Bitmap onebackdrawmap;
-        string onebackscript;
         public Form1()
         {
             InitializeComponent();

@@ -28,79 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.scriptv = new System.Windows.Forms.Button();
-            this.scriptthing = new System.Windows.Forms.RichTextBox();
-            this.color = new System.Windows.Forms.Button();
+            this.Drawbox = new System.Windows.Forms.PictureBox();
+            this.Colorpicker = new System.Windows.Forms.ColorDialog();
+            this.Scripttoggle = new System.Windows.Forms.Button();
+            this.Scriptbox = new System.Windows.Forms.RichTextBox();
+            this.Color = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
             this.ModeButton = new System.Windows.Forms.Button();
             this.DrawMode = new System.Windows.Forms.ComboBox();
-            this.polyclose = new System.Windows.Forms.Button();
+            this.PolyClose = new System.Windows.Forms.Button();
             this.Text_box = new System.Windows.Forms.TextBox();
             this.Text_Box_Panel = new System.Windows.Forms.Panel();
             this.Number_Box = new System.Windows.Forms.TextBox();
             this.Undoer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Drawbox)).BeginInit();
             this.Text_Box_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // Drawbox
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Drawbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(726, 428);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.Drawbox.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.Drawbox.Location = new System.Drawing.Point(0, 26);
+            this.Drawbox.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
+            this.Drawbox.Name = "Drawbox";
+            this.Drawbox.Size = new System.Drawing.Size(726, 428);
+            this.Drawbox.TabIndex = 0;
+            this.Drawbox.TabStop = false;
+            this.Drawbox.SizeChanged += new System.EventHandler(this.Drawbox_SizeChanged);
+            this.Drawbox.Click += new System.EventHandler(this.Drawbox_Click);
+            this.Drawbox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drawbox_MouseMove);
             // 
-            // scriptv
+            // Scripttoggle
             // 
-            this.scriptv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.scriptv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.scriptv.Location = new System.Drawing.Point(625, 0);
-            this.scriptv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.scriptv.Name = "scriptv";
-            this.scriptv.Size = new System.Drawing.Size(101, 26);
-            this.scriptv.TabIndex = 1;
-            this.scriptv.Text = "Design View";
-            this.scriptv.UseVisualStyleBackColor = true;
-            this.scriptv.Click += new System.EventHandler(this.scriptv_Click);
+            this.Scripttoggle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Scripttoggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Scripttoggle.Location = new System.Drawing.Point(625, 0);
+            this.Scripttoggle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Scripttoggle.Name = "Scripttoggle";
+            this.Scripttoggle.Size = new System.Drawing.Size(101, 26);
+            this.Scripttoggle.TabIndex = 1;
+            this.Scripttoggle.Text = "Design View";
+            this.Scripttoggle.UseVisualStyleBackColor = true;
+            this.Scripttoggle.Click += new System.EventHandler(this.Scripttoggle_Click);
             // 
-            // scriptthing
+            // Scriptbox
             // 
-            this.scriptthing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Scriptbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.scriptthing.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.scriptthing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scriptthing.Location = new System.Drawing.Point(0, 26);
-            this.scriptthing.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.scriptthing.Name = "scriptthing";
-            this.scriptthing.Size = new System.Drawing.Size(726, 428);
-            this.scriptthing.TabIndex = 2;
-            this.scriptthing.Text = "; welcome to RacketUiPaint\n; click Design View at the top to make something for r" +
+            this.Scriptbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Scriptbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scriptbox.Location = new System.Drawing.Point(0, 26);
+            this.Scriptbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Scriptbox.Name = "Scriptbox";
+            this.Scriptbox.Size = new System.Drawing.Size(726, 428);
+            this.Scriptbox.TabIndex = 2;
+            this.Scriptbox.Text = "; welcome to RacketUiPaint\n; click Design View at the top to make something for r" +
     "acket\n(require 2htdp/image)\n(define base(rectangle 0 0 \"solid\" \"white\"))";
             // 
-            // color
+            // Color
             // 
-            this.color.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.color.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.color.Location = new System.Drawing.Point(497, 0);
-            this.color.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.color.Name = "color";
-            this.color.Size = new System.Drawing.Size(65, 26);
-            this.color.TabIndex = 1;
-            this.color.Text = "Color";
-            this.color.UseVisualStyleBackColor = true;
-            this.color.Click += new System.EventHandler(this.color_Click);
+            this.Color.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Color.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Color.Location = new System.Drawing.Point(497, 0);
+            this.Color.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Color.Name = "Color";
+            this.Color.Size = new System.Drawing.Size(65, 26);
+            this.Color.TabIndex = 1;
+            this.Color.Text = "Color";
+            this.Color.UseVisualStyleBackColor = true;
+            this.Color.Click += new System.EventHandler(this.Color_Click);
             // 
             // Clear
             // 
@@ -148,19 +148,19 @@
             this.DrawMode.TabIndex = 1;
             this.DrawMode.SelectedIndexChanged += new System.EventHandler(this.DrawMode_SelectedIndexChanged);
             // 
-            // polyclose
+            // PolyClose
             // 
-            this.polyclose.FlatAppearance.BorderSize = 2;
-            this.polyclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.polyclose.ForeColor = System.Drawing.Color.LimeGreen;
-            this.polyclose.Location = new System.Drawing.Point(150, 0);
-            this.polyclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.polyclose.Name = "polyclose";
-            this.polyclose.Size = new System.Drawing.Size(56, 26);
-            this.polyclose.TabIndex = 1;
-            this.polyclose.Text = "Done";
-            this.polyclose.UseVisualStyleBackColor = true;
-            this.polyclose.Click += new System.EventHandler(this.polyclose_Click);
+            this.PolyClose.FlatAppearance.BorderSize = 2;
+            this.PolyClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PolyClose.ForeColor = System.Drawing.Color.LimeGreen;
+            this.PolyClose.Location = new System.Drawing.Point(150, 0);
+            this.PolyClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PolyClose.Name = "PolyClose";
+            this.PolyClose.Size = new System.Drawing.Size(56, 26);
+            this.PolyClose.TabIndex = 1;
+            this.PolyClose.Text = "Done";
+            this.PolyClose.UseVisualStyleBackColor = true;
+            this.PolyClose.Click += new System.EventHandler(this.PolyClose_Click);
             // 
             // Text_box
             // 
@@ -220,23 +220,23 @@
             this.Controls.Add(this.Text_Box_Panel);
             this.Controls.Add(this.ModeButton);
             this.Controls.Add(this.Undoer);
-            this.Controls.Add(this.color);
+            this.Controls.Add(this.Color);
             this.Controls.Add(this.DrawMode);
-            this.Controls.Add(this.scriptthing);
-            this.Controls.Add(this.scriptv);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.polyclose);
+            this.Controls.Add(this.Scriptbox);
+            this.Controls.Add(this.Scripttoggle);
+            this.Controls.Add(this.Drawbox);
+            this.Controls.Add(this.PolyClose);
             this.Controls.Add(this.Clear);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(744, 0);
+            this.MinimumSize = new System.Drawing.Size(744, 47);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "RacketUiPaint";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Drawbox)).EndInit();
             this.Text_Box_Panel.ResumeLayout(false);
             this.Text_Box_Panel.PerformLayout();
             this.ResumeLayout(false);
@@ -245,15 +245,15 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Button scriptv;
-        private System.Windows.Forms.RichTextBox scriptthing;
-        private System.Windows.Forms.Button color;
+        private System.Windows.Forms.PictureBox Drawbox;
+        private System.Windows.Forms.ColorDialog Colorpicker;
+        private System.Windows.Forms.Button Scripttoggle;
+        private System.Windows.Forms.RichTextBox Scriptbox;
+        private System.Windows.Forms.Button Color;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button ModeButton;
         private System.Windows.Forms.ComboBox DrawMode;
-        private System.Windows.Forms.Button polyclose;
+        private System.Windows.Forms.Button PolyClose;
         private System.Windows.Forms.TextBox Text_box;
         private System.Windows.Forms.Panel Text_Box_Panel;
         private System.Windows.Forms.TextBox Number_Box;

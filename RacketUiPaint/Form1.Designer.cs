@@ -50,6 +50,7 @@
             this.Drawbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Drawbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Drawbox.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Drawbox.Location = new System.Drawing.Point(0, 26);
             this.Drawbox.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);

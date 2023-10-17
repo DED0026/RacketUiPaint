@@ -350,6 +350,7 @@ namespace RacketUiPaint
             {
                 drawingBitmap.Dispose();
                 drawingBitmap = new Bitmap(Drawbox.Width, Drawbox.Height);
+                Drawbox.BackgroundImage = null;
                 Drawbox.Image = drawingBitmap;
                 oldrandomstring = "base";
                 Scriptbox.Text = "; welcome to RacketUiPaint\r; click Design View at the top to make something for racket\r(require 2htdp/image)\r(define base(rectangle 0 0 \"solid\" \"white\"))";
@@ -597,20 +598,13 @@ namespace RacketUiPaint
         private void Drawbox_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
                 e.Effect = DragDropEffects.All;
-            }
         }
 
         private void Drawbox_DragDrop(object sender, DragEventArgs e)
         {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            if (files.Length > 0)
-            {
-                string imagePath = files[0];
-                Drawbox.BackgroundImage = Image.FromFile(imagePath);
-                Drawbox.BackgroundImageLayout = ImageLayout.Zoom;
-            }
+            Drawbox.BackgroundImage = null;
+            Drawbox.BackgroundImage = Image.FromFile(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
         }
     }
 }

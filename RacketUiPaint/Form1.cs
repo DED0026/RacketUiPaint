@@ -41,6 +41,7 @@ namespace RacketUiPaint
             Text_Box_Panel.Hide();
             Undoer.Hide();
             SaveState();
+            Drawbox.AllowDrop = true;
         }
 
         private void Scripttoggle_Click(object sender, EventArgs e)
@@ -79,8 +80,8 @@ namespace RacketUiPaint
                         Graphics.FromImage(drawingBitmap).FillRectangle(drawingPen.Brush, new Rectangle(x, y, width, height));
                     Drawbox.Image = drawingBitmap;
                     drawingPen.Dispose();
-                    string newrandomstring = "";
                 loob:
+                    newrandomstring = "";
                     while (5 > newrandomstring.Length)
                     {
                         newrandomstring += alphabet[new Random().Next(0, 62)];
@@ -126,6 +127,7 @@ namespace RacketUiPaint
                     Drawbox.Image = drawingBitmap;
                     drawingPen.Dispose();
                 loob:
+                    newrandomstring = "";
                     while (5 > newrandomstring.Length)
                     {
                         newrandomstring += alphabet[new Random().Next(0, 62)];
@@ -162,6 +164,7 @@ namespace RacketUiPaint
                     drawingPen.Dispose();
                     Drawbox.Image = drawingBitmap;
                 loob:
+                    newrandomstring = "";
                     while (5 > newrandomstring.Length)
                     {
                         newrandomstring += alphabet[new Random().Next(0, 62)];
@@ -195,6 +198,7 @@ namespace RacketUiPaint
                     drawingPen.Dispose();
                     Drawbox.Image = drawingBitmap;
                 loob:
+                    newrandomstring = "";
                     while (5 > newrandomstring.Length)
                     {
                         newrandomstring += alphabet[new Random().Next(0, 62)];
@@ -236,6 +240,7 @@ namespace RacketUiPaint
                     drawingPen.Dispose();
                     Drawbox.Image = drawingBitmap;
                 loob:
+                    newrandomstring = "";
                     while (5 > newrandomstring.Length)
                     {
                         newrandomstring += alphabet[new Random().Next(0, 62)];
@@ -338,6 +343,8 @@ namespace RacketUiPaint
             if (turn != 1)
             {
                 turn = 1;
+                pointslist.Clear();
+                PolyClose.Hide();
             }
             else
             {
@@ -372,15 +379,16 @@ namespace RacketUiPaint
 
         private void Drawbox_SizeChanged(object sender, EventArgs e)
         {
-            if (bitmapthing.Width < Drawbox.Size.Width)
+            if (bitmapthing.Width < Drawbox.Size.Width || bitmapthing.Height < Drawbox.Size.Height)
+            {
                 bitmapthing.Width = Drawbox.Size.Width;
-            if (bitmapthing.Height < Drawbox.Size.Height)
                 bitmapthing.Height = Drawbox.Size.Height;
-            Bitmap thingy = drawingBitmap;
-            drawingBitmap.Dispose();
-            drawingBitmap = new Bitmap(bitmapthing.Width, bitmapthing.Height);
-            Graphics.FromImage(drawingBitmap).DrawImage(thingy, 0, 0);
-            thingy.Dispose();
+                Bitmap thingy = new Bitmap(drawingBitmap);
+                drawingBitmap = new Bitmap(bitmapthing.Width, bitmapthing.Height);
+                Graphics.FromImage(drawingBitmap).DrawImage(thingy, 0, 0);
+                Drawbox.Image = drawingBitmap;
+                thingy.Dispose();
+            }
         }
         double CalcDistance(Point p1, Point p2) => Math.Sqrt((p1.X - p2.X) * (p1.X - p2.X) + (p1.Y - p2.Y) * (p1.Y - p2.Y));// < d * d
 
@@ -515,8 +523,9 @@ namespace RacketUiPaint
                     Graphics.FromImage(drawingBitmap).FillPolygon(new SolidBrush(colorthingy), pointslist.ToArray());
                 Drawbox.Image = drawingBitmap;
 
-                string newrandomstring = "";
+                
             loob:
+                newrandomstring = "";
                 while (5 > newrandomstring.Length)
                 {
                     newrandomstring += alphabet[new Random().Next(0, 62)];
@@ -558,7 +567,7 @@ namespace RacketUiPaint
                 oldrandomstring = randomstack.Peek();
                 Scriptbox.Text = scriptstack.Peek();
                 //pictureBox1.Image = new Bitmap(bitmaphistory.Peek());
-                Graphics.FromImage(drawingBitmap).Clear(BackColor);
+                Graphics.FromImage(drawingBitmap).Clear(System.Drawing.Color.Transparent);
                 Graphics.FromImage(drawingBitmap).DrawImage(bitmaphistory.Peek(), Point.Empty);
                 Drawbox.Image = drawingBitmap;
                 Drawbox.Invalidate();
@@ -583,6 +592,25 @@ namespace RacketUiPaint
             //onebackoldran = oldrandomstring;
             //onebackscript = scriptthing.Text;
             //Undoer.Show();
+        }
+
+        private void Drawbox_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.All;
+            }
+        }
+
+        private void Drawbox_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (files.Length > 0)
+            {
+                string imagePath = files[0];
+                Drawbox.BackgroundImage = Image.FromFile(imagePath);
+                Drawbox.BackgroundImageLayout = ImageLayout.Zoom;
+            }
         }
     }
 }

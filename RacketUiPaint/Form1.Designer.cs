@@ -59,6 +59,8 @@
             this.Drawbox.TabStop = false;
             this.Drawbox.SizeChanged += new System.EventHandler(this.Drawbox_SizeChanged);
             this.Drawbox.Click += new System.EventHandler(this.Drawbox_Click);
+            this.Drawbox.DragDrop += new System.Windows.Forms.DragEventHandler(this.Drawbox_DragDrop);
+            this.Drawbox.DragEnter += new System.Windows.Forms.DragEventHandler(this.Drawbox_DragEnter);
             this.Drawbox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Drawbox_MouseMove);
             // 
             // Scripttoggle
